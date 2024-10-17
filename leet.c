@@ -11,7 +11,6 @@ typedef struct
     int top2;         
 } MyQueue;
 
-// Function to create and initialize a queue
 MyQueue myQueueCreate() {
     MyQueue queue;
     queue.top1 = -1;  
@@ -60,8 +59,8 @@ int myQueuePop(MyQueue* obj)
     return val;
 }
 
-// Function to peek the front element of the queue
-int myQueuePeek(MyQueue* obj) 
+// Displaying Queue
+void myQueuePeek(MyQueue* obj) 
 {
     int i = (*obj).top1;
     if ((*obj).top2 == -1)
@@ -76,25 +75,65 @@ int myQueuePeek(MyQueue* obj)
     if ((*obj).top2 == -1) 
     {
         printf("Queue is empty\n");
-        return -1;
     }
     else
     {
+        printf("Queue =  ");
         while ((*obj).top2 != -1)
         {
-            return (*obj).s2[(*obj).top2];
+            printf("%d\t", (*obj).s2[(*obj).top2--]);
         }
         (*obj).top2 = -1;
     }
 }
 
-// Queue Status
-bool myQueueEmpty(MyQueue* obj) {
+bool myQueueEmpty(MyQueue* obj) 
+{
+    printf("Queue is empty now");
     return ((*obj).top1 == -1 && (*obj).top2 == -1);
 }
-
 
 // void myQueueFree(MyQueue* obj) {
 //     // No memory to free since we are not using dynamic allocation
 // }
 
+int main() {
+    MyQueue obj = myQueueCreate(); 
+
+    int opt, in;
+    while (1)
+    {
+        printf("\n\n1=Push\t2=Pop\t3=Display\t4=Exit");
+        printf("\nSelect Option: ");
+        scanf("%d", &opt);
+
+        switch(opt)
+        {
+            case 1:
+            {
+                printf("Enter Push Element: ");
+                scanf("%d", &in);
+                myQueuePush(&obj, in);  
+                break;
+            }
+            case 2:
+            {
+                myQueuePop(&obj);
+                break;
+            }
+            case 3:
+            {
+                myQueuePeek(&obj);
+                break;
+            }
+            case 4:
+            {
+                printf("Program Exited");
+                return 0;
+            }
+            default:
+                printf("Invalid Operations");
+        }
+    }
+    return 0;
+}
