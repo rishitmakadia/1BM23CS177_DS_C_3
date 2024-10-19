@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <stdbool.h>
 
-#define MAX 100  
+#define MAX 2  
 
 typedef struct 
 {
@@ -87,26 +86,24 @@ void myQueuePeek(MyQueue* obj)
     }
 }
 
-bool myQueueEmpty(MyQueue* obj) 
-{
-    printf("Queue is empty now");
-    return ((*obj).top1 == -1 && (*obj).top2 == -1);
-}
+// int myQueueEmpty(MyQueue* obj) 
+// {
+//     printf("Queue is empty now");
+//     return ((*obj).top1 == -1 && (*obj).top2 == -1);
+// }
 
 // void myQueueFree(MyQueue* obj) {
 //     // No memory to free since we are not using dynamic allocation
 // }
 
 int main() {
-    MyQueue obj = myQueueCreate(); 
-
+    MyQueue obj = myQueueCreate();   //Imp
     int opt, in;
     while (1)
     {
-        printf("\n\n1=Push\t2=Pop\t3=Display\t4=Exit");
+        printf("\n1=Push\t2=Pop\t3=Display\t4=Exit");
         printf("\nSelect Option: ");
         scanf("%d", &opt);
-
         switch(opt)
         {
             case 1:
