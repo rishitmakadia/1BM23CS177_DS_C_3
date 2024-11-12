@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-void insert(int *queue, int *front ,int *rear, int value, int MAX){
-    if ((*front ==0 && *rear == (MAX -1)) || (*rear == *front -1))
+void insert(int *queue, int *front ,int *rear, int value, int MAX)
+{
+    if ((*front == 0 && *rear == (MAX -1)) || (*rear == *front -1))
     // if ((*rear + 1) % MAX == *front)
     {
         printf("Queue Overflow");

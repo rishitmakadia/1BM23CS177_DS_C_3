@@ -4,10 +4,10 @@
 int queue[MAX];
 int front=-1, rear=-1;
 
-void insertion(ele)
+void insertion(int ele)
 {
     if (rear == MAX-1)
-    printf("Queue Overflow");
+        printf("Queue Overflow");
     else 
     {
         queue[++rear]=ele;
@@ -17,7 +17,7 @@ void deletion()
 {
     int del;
     if (rear == -1)
-    printf("Queue is Empty");
+        printf("Queue is Empty");
     else
         del=queue[++front];
 }
@@ -25,7 +25,7 @@ void display()
 {
     int i = front;
     if (rear == -1)
-    printf("Queue is Empty");
+        printf("Queue is Empty");
     else 
     {
         printf("Queue = ");
@@ -46,22 +46,22 @@ int main()
         switch (opt)
         {
             case 1:
-            {
+            
                 printf("Enter Element: ");
                 scanf("%d", &no);
                 insertion(no);
                 break;
-            }
+            
             case 2:
-            {
+            
                 deletion();
                 break;
-            }
+            
             case 3:
-            {
+            
                 display();
                 break;
-            }
+            
             case 4:
                 return 0;
             default:

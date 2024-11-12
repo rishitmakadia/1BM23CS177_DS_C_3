@@ -17,13 +17,15 @@ void push(char ele)
 
 char pop() //fu'n need to be char
 {
-    if(top>=0)
+    if (top==-1)
+        printf("Stack Underflow ");
+    else 
     {
-        char popele = stack[top];
+        int popele = stack[top];
+        // printf("Pop element = %d", popele);
         top--;
         return popele;
     }
-    return '\0';
 }
 
 int prece(char ch)

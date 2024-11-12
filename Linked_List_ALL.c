@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 struct Node {
     int data;
     struct Node *next;
@@ -63,6 +63,11 @@ void deleteEnd(struct Node **head){
         return;
     }
     struct Node *temp = *head;
+    if(temp->next == NULL){
+        free(temp);
+        *head = NULL;
+        return;
+    }
     while (temp->next->next!=NULL){
         temp = temp->next;
     }
@@ -77,21 +82,21 @@ void deleteVal(struct Node **head, int val){
     }
     struct Node *temp = *head;
     if (temp->data == val){
-        deleteBeg(&head);
+        *head = temp->next;
         free(temp);
+        return;
     }
     while (temp->next->data!=val){
         temp = temp->next;
     }
-    if(temp==NULL){
+    if(temp->next == NULL){
         printf("Value not present in LL");
         free(temp);
         // return;
     }
-    // free(temp->next);
-    // temp = temp->next;
-    temp->next = temp->next->next;
-    free(temp->next->next);
+    struct Node *toDelete = temp->next;
+    temp->next = toDelete->next; // Bypass the node to be deleted
+    free(toDelete);
 }
 
 void display(struct Node **head){
@@ -105,15 +110,14 @@ void display(struct Node **head){
         printf("\t%d", temp->data);
         temp = temp->next;
     }
-    free(temp);
+    
 }
 
 int main(){
     struct Node *head = NULL;
     int choice, data, pos;
-
+    printf("\n1. Insert at beginning\t2. Insert at end\t3. Insert at position\n4. Delete from beginning\t5. Delete from end\t6. Delete by Value\n7. Display\t8. Exit");
     while (1) {
-        printf("\n1. Insert at beginning\t2. Insert at end\t3. Insert at position\n4. Delete from beginning\t5. Delete from end\t6. Delete by Value\n7. Display list\t8. Exit");
         printf("\nEnter your choice: ");
         scanf("%d", &choice);
 
