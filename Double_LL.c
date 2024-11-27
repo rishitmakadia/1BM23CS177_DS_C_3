@@ -5,7 +5,7 @@ struct Node
 {
     int data;
     struct Node *next;
-    struct Node *prev;
+    struct Node *prev; 
 };
 struct Node *create(int val)
 {
