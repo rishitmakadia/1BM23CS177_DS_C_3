@@ -46,22 +46,16 @@ int main()
         switch (opt)
         {
             case 1:
-            
                 printf("Enter Element: ");
                 scanf("%d", &no);
                 insertion(no);
                 break;
-            
             case 2:
-            
                 deletion();
                 break;
-            
             case 3:
-            
                 display();
                 break;
-            
             case 4:
                 return 0;
             default:

@@ -33,7 +33,7 @@ int main(){
     int visited[MAX]={0}, adj[MAX][MAX];
     int choice;
     char ch;
-    printf("\n1. Insert Graph \t2. DFS Traversal\t3. Exit\t\n");
+    printf("\n1. Insert Graph\t2. DFS Traversal\t3. Exit\t\n");
     while (1) {
         printf("\nEnter your choice: ");
         scanf("%d", &choice);

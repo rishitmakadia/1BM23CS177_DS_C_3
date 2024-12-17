@@ -30,7 +30,7 @@ void insertEnd(struct Node **head, int val){
 void insertPos(struct Node **head, int val, int pos){
     struct Node *new = (struct Node *) malloc(sizeof(struct Node));
     new->data=val;
-    if (pos ==0){
+    if (pos==0){
         new->next=*head;
         *head = new;
         return;
