@@ -48,25 +48,6 @@ void postOrder(Node *root){
     }
 }
 
-// int main(){
-//     Node* root=NULL;
-//     root=create(root, 5);
-//     insert(root, 2);
-//     insert(root, 3);
-//     insert(root, 11);
-//     insert(root, 7);
-//     insert(root, 10);
-//     insert(root, 1);
-//     insert(root, 8);
-//     insert(root, 4);
-
-//     printf("\nPre-Order : ");
-//     preOrder(root);
-//     printf("\nIn-Order : ");
-//     inOrder(root);
-//     printf("\nPost-Order : ");
-//     postOrder(root);
-// }
 
 int main()
 {
