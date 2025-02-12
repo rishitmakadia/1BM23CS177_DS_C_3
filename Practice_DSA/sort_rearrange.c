@@ -73,3 +73,13 @@ int main() {
 
     return 0;
 }
+
+// All elements are equal:
+// Input: 1 1 1 1 1
+// Output remains unchanged.
+// Single minimum element:
+// Input: 5 4 1 3 2
+// Output: 2 3 4 5 1
+// Already sorted:
+// Input: 1 2 3 4 5
+// Output: 2 3 4 5 1

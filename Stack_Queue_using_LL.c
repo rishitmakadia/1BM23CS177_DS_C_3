@@ -73,7 +73,7 @@ void displayQueue()
 
 int main()
 {
- int choice, data;
+    int choice, data;
     printf("\n1. Stack PUSH\t2. Stack POP\t3. Display Stack\n4. Queue Insertion\t5. Queue Deletion\t6. Display Queue\n7. Exit");
     while (1) {
         printf("\nEnter your choice: ");

@@ -80,7 +80,6 @@ int main(){
     while (1) {
         printf("\nEnter your choice: ");
         scanf("%d", &choice);
-
         switch (choice) 
         {
             case 1:
